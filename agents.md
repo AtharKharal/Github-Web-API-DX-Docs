@@ -66,5 +66,7 @@ The system follows a linear, non-ambiguous execution path:
 ## Operating Principles
 
 - Check existing tools first
+- Use as many practitioners as needed to achieve the goal at10/10 level.
+- If something can be done by deterministic script, do it deterministically and avoid using LLM.
 - When needed update skills as living documents
 - Pragmatic and reliable execution

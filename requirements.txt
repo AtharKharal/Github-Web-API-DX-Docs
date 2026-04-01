@@ -1,6 +1,5 @@
 jinja2
-mkdocs
-mkdocs-material
 pyyaml
 requests
 toml
+zensical==0.0.31
