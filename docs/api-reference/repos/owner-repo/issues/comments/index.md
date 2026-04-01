@@ -1,0 +1,20 @@
+# comments
+
+API endpoints for comments.
+
+## Endpoints
+
+
+### [{comment id}](comment-id/index.md)
+
+`` ``
+
+
+
+
+### [List issue comments for a repository](list-issue-comments-for-a-repository.md)
+
+`GET` `{{baseUrl}}/repos/:owner/:repo/issues/comments?sort=created&direction=<string>&since=<string>&per_page=30&page=1`
+
+By default, Issue Comments are ordered by ascending ID....
+

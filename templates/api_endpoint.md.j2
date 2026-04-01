@@ -1,0 +1,45 @@
+# {{ endpoint.name }}
+
+{{ endpoint.description }}
+
+```http
+{{ endpoint.method }} {{ endpoint.url }}
+```
+
+{% if endpoint.auth_required %}
+!!! abstract "Authentication Required"
+    This endpoint requires a personal access token with the `{{ endpoint.scope }}` scope.
+{% endif %}
+
+{% if endpoint.parameters %}
+## Parameters
+
+| Name | Type | In | Required | Description |
+| :--- | :--- | :--- | :--- | :--- |
+{% for param in endpoint.parameters %}
+| `{{ param.name }}` | `{{ param.type }}` | `{{ param.location }}` | `{{ "Yes" if param.required else "No" }}` | {{ param.description }} |
+{% endfor %}
+{% endif %}
+
+## Request Body
+
+=== "JSON"
+
+    ```json
+    {{ endpoint.request_example | indent(4) }}
+    ```
+
+{% if endpoint.responses %}
+## Responses
+
+{% for response in endpoint.responses %}
+=== "{{ response.code }} {{ response.status }}"
+
+    {{ response.description }}
+
+    ```json
+    {{ response.example | indent(4) }}
+    ```
+
+{% endfor %}
+{% endif %}

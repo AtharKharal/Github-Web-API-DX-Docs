@@ -1,0 +1,6 @@
+jinja2
+mkdocs
+mkdocs-material
+pyyaml
+requests
+toml

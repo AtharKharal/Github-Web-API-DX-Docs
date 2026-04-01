@@ -1,0 +1,14 @@
+# {{ category.name }}
+
+{{ category.description }}
+
+## Endpoints
+
+{% for endpoint in category.endpoints %}
+### [{{ endpoint.name }}]({{ endpoint.path | default("#") }})
+
+`{{ endpoint.method }}` `{{ endpoint.url }}`
+
+{{ endpoint.summary | default(endpoint.description | truncate(150)) }}
+
+{% endfor %}

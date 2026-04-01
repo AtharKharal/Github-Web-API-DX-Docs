@@ -1,0 +1,58 @@
+# List repository tags
+
+
+
+```http
+GET {{baseUrl}}/repos/:owner/:repo/tags?per_page=30&page=1
+```
+
+
+
+
+## Parameters
+
+| Name | Type | In | Required | Description |
+| :--- | :--- | :--- | :--- | :--- |
+
+| `owner` | `string` | `Path` | `Yes` | (Required)  |
+
+| `repo` | `string` | `Path` | `Yes` | (Required)  |
+
+| `per_page` | `string` | `Query` | `No` | Results per page (max 100) |
+
+| `page` | `string` | `Query` | `No` | Page number of the results to fetch. |
+
+
+
+## Request Body
+
+=== "JSON"
+
+    ```json
+    
+    ```
+
+
+## Responses
+
+
+=== "200 OK"
+
+    response
+
+    ```json
+    [
+     {
+      "name": "v0.1",
+      "commit": {
+       "sha": "c5b97d5ae6c19d5c5df71a34c7fbeeda2479ccbc",
+       "url": "https://api.github.com/repos/octocat/Hello-World/commits/c5b97d5ae6c19d5c5df71a34c7fbeeda2479ccbc"
+      },
+      "zipball_url": "https://github.com/octocat/Hello-World/zipball/v0.1",
+      "tarball_url": "https://github.com/octocat/Hello-World/tarball/v0.1",
+      "node_id": "MDQ6VXNlcjE="
+     }
+    ]
+    ```
+
+

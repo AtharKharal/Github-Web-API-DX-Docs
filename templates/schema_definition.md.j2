@@ -1,0 +1,19 @@
+# {{ schema.name }}
+
+{{ schema.description }}
+
+## Properties
+
+| Property | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+{% for field in schema.fields %}
+| `{{ field.name }}` | `{{ field.type }}` | `{{ "Yes" if field.required else "No" }}` | {{ field.description }}{% if field.enum %} <br> **Enum:** `{{ field.enum | join(", ") }}`{% endif %} |
+{% endfor %}
+
+{% if schema.example %}
+## Example
+
+```json
+{{ schema.example | indent(2) }}
+```
+{% endif %}
